@@ -24,6 +24,12 @@ a.mainLink {
   color:black;
 }
 
+a.secondLink {
+  font-size: 14px;
+  font-family:verdana;
+  color:red;
+}
+
 .ulTeams1 {
   text-align:center;
 }
@@ -107,3 +113,16 @@ a.mainLink {
   width:80%
 }
 
+.ulLeagues1 {
+  text-align:center;
+}
+
+.liLeagues1 {
+  height:130px;
+  width:130px;
+}
+
+.divLeagues1 {
+  height:90%;
+  width:100%;
+}

@@ -4,22 +4,21 @@ const logger = require("morgan");
 const axios = require("axios");
 router.use(logger("tiny"));
 
-var league;
+const teamsRouter = require('./teams');
 
-router.get('/:query/:team/:league/:season', (req, res) => {
+const league = teamsRouter.league;
 
-    createLeague(req.params.league, req.params.season)
+router.get('/:idTeam', (req, res) => {
 
-    const options = createPlayersOptions(req.params.query, req.params.team);
-    let url = options.hostname + options.path;
-
+    const url = createPlayersOptions(req.params.idTeam);
+    
     axios.get(url)
         .then((response) => {
             res.writeHead(response.status,{'content-type': 'text/html'});
             return response.data;
     })
     .then( (rsp) => {
-        const s = createPage('Players from ' + req.params.team, rsp);
+        const s = createPage('Players ', rsp);
         res.write(s);
         res.end();
     })
@@ -29,26 +28,17 @@ router.get('/:query/:team/:league/:season', (req, res) => {
 
 });
 
-function createLeague(id, season) {
-
-    league = {
-        id: id,
-        season: season
-    };
-
-}
-
-function createPlayersOptions(query) {
+function createPlayersOptions(idTeam) {
     const options = {
         hostname: "https://thesportsdb.com",
         path: "/api/v1/json/4013017/lookup_all_players.php?"
     }
 
-    const str = 'id=' + query
+    const str = 'id=' + idTeam
 
     options.path += str;
 
-    return options;
+    return options.hostname + options.path;
 }
 
 function parsePhotoRsp(rsp) {
@@ -105,7 +95,7 @@ function createPage(title, rsp) {
                         <div class="div1">
                             <h7>
                                 <a class="mainLink"
-                                    href="http://localhost:3000/search/${league.id}/${league.season}">
+                                    href="/search/${league.id}/${league.season}">
                                     Go to teams page
                                 </a>
                             </h7>

@@ -5,21 +5,23 @@ const axios = require("axios");
 
 router.use(logger("tiny"));
 
-var league;
+const league = {
+    id: null,
+    name: null
+};
 
 router.get('/:league/:season', (req, res) => {
 
     createLeague(req.params.league, req.params.season)
-    
-    const teamOptions = createTeamsOptions();
-    let urlTeam = teamOptions.hostname + teamOptions.path;
+
+    const urlTeam = createTeamsOptions();
 
     axios.get(urlTeam)
         .then((response) => {
             return response.data;
     })
     .then((rsp) => {
-        const s = createPage('La league teams', rsp);
+        const s = createPage('league teams', rsp);
         res.write(s);
         res.end();
     })
@@ -30,12 +32,8 @@ router.get('/:league/:season', (req, res) => {
 });
 
 function createLeague(id, season) {
-
-    league = {
-        id: id,
-        season: season
-    };
-
+    league.id = id;
+    league.season = season;
 }
 
 function createTeamsOptions() {
@@ -46,7 +44,7 @@ function createTeamsOptions() {
 
     options.path += 'id=' + league.id
 
-    return options;
+    return options.hostname + options.path;
 }
 
 function parsePhotoRsp(rsp) {
@@ -55,7 +53,7 @@ function parsePhotoRsp(rsp) {
 
     for (let i = 0; i < rsp.teams.length; i++) {
         team = rsp.teams[i];
-        p_url = `http://localhost:3000/result/${team.idTeam}/${team.strTeam}/${league.id}/${league.season}`;
+        p_url = `/result/${team.idTeam}`;
         
         if ( (i % 5) == 0){
             s += ` </ul>
@@ -66,7 +64,7 @@ function parsePhotoRsp(rsp) {
             <li class="list-group-item liTeams1">
                 <a href="${p_url}" >
                     <div class="divTeams1">
-                        <img style="height:100%;width:100%" alt="${team.strTeam}" src="${team.strTeamBadge}/preview "/>
+                        <img class="imgPlayer" alt="${team.strTeam}" src="${team.strTeamBadge}/preview "/>
                     </div>
                     <div class="divTeams2">
                         <h7> ${team.strTeam} </h7>
@@ -97,8 +95,15 @@ function createPage(title, rsp) {
                     <body >
                         <div class="div1">
                             <h7> <a class="mainLink"
-                                    href="http://localhost:3000/table/${league.id}/${league.season}">
+                                    href="/table/${league.id}/${league.season}">
                                     Go to season table ${league.season}
+                                </a>
+
+                                </br>
+
+                                <a class="secondLink"
+                                    href="../../">
+                                    Go to leagues
                                 </a>
                             </h7>
                         </div>
@@ -112,5 +117,6 @@ function createPage(title, rsp) {
 }
 
 module.exports = {
-    router: router
-  }
+    router: router,
+    league: league
+};

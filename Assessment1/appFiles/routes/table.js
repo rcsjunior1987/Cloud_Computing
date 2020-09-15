@@ -4,14 +4,16 @@ const logger = require("morgan");
 const axios = require("axios");
 router.use(logger("tiny"));
 
-var league;
+const league = {
+    id: null,
+    name: null
+};
 
 router.get('/:league/:season', (req, res) => {
 
     createLeague(req.params.league, req.params.season)
 
-    const options = createPlayersOptions();
-    let url = options.hostname + options.path;
+    const url = createPlayersOptions();  
 
     axios.get(url)
         .then((response) => {
@@ -40,16 +42,12 @@ function createPlayersOptions() {
 
     options.path += str;
 
-    return options;
+    return options.hostname + options.path;
 }
 
 function createLeague(id, season) {
-
-    league = {
-        id: id,
-        season: season
-    };
-
+        league.id = id;
+        league.season = season;
 }
 
 function parsePhotoRsp(rsp) {
@@ -117,8 +115,8 @@ function createPage(title, rsp) {
                     <body>
                         <div class="divTable1">
                             <h4> <a class="mainLink"
-                                    href="http://localhost:3000/search/${league.id}/${league.season}">
-                                    Go to season table ${league.season}
+                                    href="/search/${league.id}/${league.season}">
+                                    Go to teams page
                                 </a>
                             </h4>
                         </div>
