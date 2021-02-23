@@ -1,5 +1,5 @@
 
-# 1.	INTRODUCTION
+## 1.	INTRODUCTION
 
 Throughout this software, a user clicks in the picture of a club from the Spanish soccer league to view who the team's current players are. Furthermore, the user may click in a link to view how the last season table looked after the matches played, possible by API's manipulation from the server-side and bootstrap, Html and CSS from the client-side. 
 Sports DB API 
