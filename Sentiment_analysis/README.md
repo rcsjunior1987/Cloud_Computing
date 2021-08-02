@@ -3,7 +3,7 @@
 
 The software developed provides a resource for users to follow a comparative sentiment analysis from the American presidential candidates Mr. Trump and Mr. Biden on Tweets coming in from all around the world in real-time. The service automatically identifies and categorizes opinions expressed in a tweet to determine whether the opinion expressed about Mr. Trump or Mr. Biden is positive, negative, or neutral. And then, demonstrate as percentage of positive, negative, and neutral comments in a Real-time pie chart, which automatically updates every three minutes, which causes scaling on the AWS instances.
 
-## 2.	TECHNICAL DESCRIPTION
+### 2.	TECHNICAL DESCRIPTION
 
 ### 2.1	MODULES
 
@@ -64,7 +64,7 @@ and the necessary commands are utilised to run the application.
 
 A no SQL database service that stores and retrieves any amount of data, and serve any level of request traffic.
 
-## 3.	User Cases
+### 3.	User Cases
 
 ### 3.1
 
@@ -74,7 +74,7 @@ As a user, I want to view two graphs, one showing the sentiment analyse of Mr. T
 
 As a user, I want that each of the graphs updates by itself everyone three minutes. So that I can have a sentiment analyse view in Live time.
 
-# 4.	Technical Breakdown
+### 4.	Technical Breakdown
 
 ### 4.1	ARCHITECTURE
 
@@ -100,7 +100,7 @@ The scaling is possible through the load generated via processing the tweets and
 ![alt text](<./bin/images/scaling.jpg>)
 
 
-## 5.	REFERENCES
+### 5.	REFERENCES
 
 [1] N. Foundation, "Node.js", Node.js, 2017. 
 [Online]. Available: https://nodejs.org/en/. [Accessed: 10- Nov- 2020]. 
