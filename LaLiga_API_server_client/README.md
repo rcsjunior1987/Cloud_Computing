@@ -57,7 +57,7 @@ Given a client's request, the server-side deals with the extended requests to ex
 The Docker configuration for this application is relatively straightforward. Firstly, Docker is used to binding the whole application into a container under an image, including the server, Node Modules, package.json files, and a folder containing CSS styles. Second, YARN is used as it automatically fixes the packages if any issues arise. Third, the port in which the node server runs are exposed (3000), and finally the CMD app.js is used to start the application.
 
 ###### Figure 4 - Docker hub page.
-![alt text](<./bin/images/dockerHub.jpg>)
+<img src="./bin/images/dockerHub.jpg" width="1000" height="700" />
 
 ###### Figure 5 - Docker hub page.
-<img src="./bin/images/dockerImage.jpg" width="200" height="400" />
+<img src="./bin/images/dockerImage.jpg" width="1000" height="300" />
