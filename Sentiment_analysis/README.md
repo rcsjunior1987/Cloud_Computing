@@ -78,26 +78,26 @@ As a user, I want that each of the graphs updates by itself everyone three minut
 
 ## 4.1	ARCHITECTURE
 
-![alt text](<./bin/img/architecture.jpg>)
+![alt text](<./bin/images/architecture.jpg>)
 
 ## 4.2	AWS SCALING INFO
 
 ### 4.2	LAUCH CONFIGURATION
 
-![alt text](<./bin/img/launchConfiguration.jpg>)
+![alt text](<./bin/images/launchConfiguration.jpg>)
 
 ### 4.3	AUTO SCALING GROUP
 
-![alt text](<./bin/img/autoScalingGroup.jpg>)
+![alt text](<./bin/images/autoScalingGroup.jpg>)
 
 ### 4.4	LOAD BALANCER
-![alt text](<./bin/img/loadBalancer.jpg>)
+![alt text](<./bin/images/loadBalancer.jpg>)
 
 ### 4.5	SCALING AND PERFORMANCE
 
 The scaling is possible through the load generated via processing the tweets and storing the tweets in the DynamoDB. A retrieving function to get the exact tweet that was just stored is also implemented in the Sentiment Analysis server to generate more load to be safe. An example of the metrics is shown by the image bellow.
 
-![alt text](<./bin/img/scaling.jpg>)
+![alt text](<./bin/images/scaling.jpg>)
 
 
 # 5.	REFERENCES
