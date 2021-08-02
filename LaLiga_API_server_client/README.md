@@ -60,4 +60,4 @@ The Docker configuration for this application is relatively straightforward. Fir
 ![alt text](<./bin/images/dockerHub.jpg>)
 
 ###### Figure 5 - Docker hub page.
-![alt text](<./bin/images/dockerHub.jpg>)
+![alt text](<./bin/images/dockerImage.jpg>)
