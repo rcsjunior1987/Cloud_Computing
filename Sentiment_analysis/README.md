@@ -64,7 +64,43 @@ and the necessary commands are utilised to run the application.
 
 A no SQL database service that stores and retrieves any amount of data, and serve any level of request traffic.
 
-# 3.	REFERENCES
+# 3.	User Cases
+
+## 3.1
+
+As a user, I want to view two graphs, one showing the sentiment analyse of Mr. Trump and the other showing the sentiment analyse of Mr. Biden from twitter. So that I can compare both American candidate’s sentiment analyse.
+
+## 3.2
+
+As a user, I want that each of the graphs updates by itself everyone three minutes. So that I can have a sentiment analyse view in Live time.
+
+# 4.	Technical Breakdown
+
+## 4.1	ARCHITECTURE
+
+![alt text](<./bin/img/architecture.jpg>)
+
+## 4.2	AWS SCALING INFO
+
+### 4.2	LAUCH CONFIGURATION
+
+![alt text](<./bin/img/launchConfiguration.jpg>)
+
+### 4.3	AUTO SCALING GROUP
+
+![alt text](<./bin/img/autoScalingGroup.jpg>)
+
+### 4.4	LOAD BALANCER
+![alt text](<./bin/img/loadBalancer.jpg>)
+
+### 4.5	SCALING AND PERFORMANCE
+
+The scaling is possible through the load generated via processing the tweets and storing the tweets in the DynamoDB. A retrieving function to get the exact tweet that was just stored is also implemented in the Sentiment Analysis server to generate more load to be safe. An example of the metrics is shown by the image bellow.
+
+![alt text](<./bin/img/scaling.jpg>)
+
+
+# 5.	REFERENCES
 
 [1] N. Foundation, "Node.js", Node.js, 2017. 
 [Online]. Available: https://nodejs.org/en/. [Accessed: 10- Nov- 2020]. 
