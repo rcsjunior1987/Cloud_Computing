@@ -1,15 +1,15 @@
 
-# 1.	INTRODUCTION
+## 1.	INTRODUCTION
 
 The software developed provides a resource for users to follow a comparative sentiment analysis from the American presidential candidates Mr. Trump and Mr. Biden on Tweets coming in from all around the world in real-time. The service automatically identifies and categorizes opinions expressed in a tweet to determine whether the opinion expressed about Mr. Trump or Mr. Biden is positive, negative, or neutral. And then, demonstrate as percentage of positive, negative, and neutral comments in a Real-time pie chart, which automatically updates every three minutes, which causes scaling on the AWS instances.
 
-# 2.	TECHNICAL DESCRIPTION
+## 2.	TECHNICAL DESCRIPTION
 
-## 2.1	MODULES
+### 2.1	MODULES
 
 The application developed contains four modules. That is Aws, Sentiment, Stream, and Twitter. The module Aws is a bridge between the application and AWS DynamoDB, and it is the model responsible for uploading and downloading data in the database and verify whether a tweet exists as data in the database. The module Twitter connects to the Twitter endpoint returning the Twitter API about the American presidential candidates. The module Stream converts the Twitts API in JSON in save those in array to be understood by the module Sentiment, which performs the sentiment analysis of both candidates and calculates the percentual of good, bad, or neutral comments of both to be pop up on the screen as two pie charts representing each candidate.
 
-### 2.2	APIS AND TECHNOLOGIES UTILISED
+#### 2.2	APIS AND TECHNOLOGIES UTILISED
 
 #### NodeJS [1]
 It is an open-source and cross-platform JavaScript runtime environment. It is used to handle serving files as well as send requests and receive responses from APIs and Databases used in the Tweet Stream, Sentiment Analysis Processing, and Application Client section.
@@ -64,43 +64,43 @@ and the necessary commands are utilised to run the application.
 
 A no SQL database service that stores and retrieves any amount of data, and serve any level of request traffic.
 
-# 3.	User Cases
+## 3.	User Cases
 
-## 3.1
+### 3.1
 
 As a user, I want to view two graphs, one showing the sentiment analyse of Mr. Trump and the other showing the sentiment analyse of Mr. Biden from twitter. So that I can compare both American candidate’s sentiment analyse.
 
-## 3.2
+### 3.2
 
 As a user, I want that each of the graphs updates by itself everyone three minutes. So that I can have a sentiment analyse view in Live time.
 
 # 4.	Technical Breakdown
 
-## 4.1	ARCHITECTURE
+### 4.1	ARCHITECTURE
 
 ![alt text](<./bin/images/architecture.jpg>)
 
-## 4.2	AWS SCALING INFO
+### 4.2	AWS SCALING INFO
 
-### 4.2	LAUCH CONFIGURATION
+#### 4.2	LAUCH CONFIGURATION
 
 ![alt text](<./bin/images/launchConfiguration.jpg>)
 
-### 4.3	AUTO SCALING GROUP
+#### 4.3	AUTO SCALING GROUP
 
 ![alt text](<./bin/images/autoScalingGroup.jpg>)
 
-### 4.4	LOAD BALANCER
+#### 4.4	LOAD BALANCER
 ![alt text](<./bin/images/loadBalancer.jpg>)
 
-### 4.5	SCALING AND PERFORMANCE
+#### 4.5	SCALING AND PERFORMANCE
 
 The scaling is possible through the load generated via processing the tweets and storing the tweets in the DynamoDB. A retrieving function to get the exact tweet that was just stored is also implemented in the Sentiment Analysis server to generate more load to be safe. An example of the metrics is shown by the image bellow.
 
 ![alt text](<./bin/images/scaling.jpg>)
 
 
-# 5.	REFERENCES
+## 5.	REFERENCES
 
 [1] N. Foundation, "Node.js", Node.js, 2017. 
 [Online]. Available: https://nodejs.org/en/. [Accessed: 10- Nov- 2020]. 
