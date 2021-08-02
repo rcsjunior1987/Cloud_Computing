@@ -12,6 +12,12 @@ Sports DB API is an open crowd-sourced database of sports artwork and metadata w
 
 As a user, I want to see a list of the clubs that made part of the season 2019-2020 from the Spanish soccer (called La Liga) to select the club I would like to have more information.
 
+![alt text](<./bin/images/homePage.jpg>)
+##### Figure 1 - HomePage.
+
+![alt text](<./bin/images/clubs.jpg>)
+##### Figure 2 - Clubs from La liga, season 2019-2020.
+
 ## 2.	TECHNICAL DESCRIPTION OF THE APPLICATION
 The overall implementation of this service is built by JavaScript and CSS3 stylesheets in the Client-side and Node.js server to build the services in Docker containers. The client-side, which is responsible for sending requests to the server, getting the responses, and handles the pages and API's using HTML5, CSS3, and JavaScript.
 
